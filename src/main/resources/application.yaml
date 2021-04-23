@@ -1,0 +1,16 @@
+postgres:
+  host    : ${DB_HOST:localhost}
+  port    : ${DB_PORT:5532}
+  db_name : ${DB_NAME:quantopay}
+  schema  : ${DB_SCHEMA:emoney}
+  user    : ${DB_USER:emoney}
+  password: ${DB_PASSWORD:password}
+
+spring:
+# DB Connection
+  datasource:
+    platform          : postgres
+    driver-class-name : org.postgresql.Driver
+    url               : jdbc:postgresql://${postgres.host}:${postgres.port}/${postgres.db_name}
+    username          : ${postgres.user}
+    password          : ${postgres.password}
